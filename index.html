@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set a password</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+  color: #111111;
+}
+
+.container {
+  max-width: 480px;
+  margin: auto;
+  padding: 35px 25px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0 0 20px;
+}
+
+.description {
+  text-align: center;
+  color: #b7b7b7;
+  font-size: 19px;
+  line-height: 1.5;
+  margin-bottom: 45px;
+}
+
+label {
+  display: block;
+  color: #55a5b5;
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #aaaaaa;
+  padding: 12px 0;
+  font-size: 18px;
+  outline: none;
+  margin-bottom: 35px;
+  background: transparent;
+}
+
+button {
+  display: block;
+  width: 85%;
+  margin: 75px auto 0;
+  padding: 17px;
+  border: none;
+  border-radius: 40px;
+  background: #aeb9bf;
+  color: white;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+#message {
+  text-align: center;
+  color: #55a5b5;
+  margin-top: 25px;
+  font-size: 17px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <h1>Set a password</h1>
+
+  <div class="description">
+    Set a good password by using a combination of lowercase and uppercase letters, numbers, and symbols.
+  </div>
+
+  <form id="passwordForm">
+
+    <label for="oldPassword">OLD PASSWORD</label>
+    <input type="password" id="oldPassword"
+           autocomplete="off" required>
+
+    <label for="newPassword">NEW PASSWORD</label>
+    <input type="password" id="newPassword"
+           autocomplete="off" required>
+
+    <label for="confirmPassword">CONFIRM PASSWORD</label>
+    <input type="password" id="confirmPassword"
+           autocomplete="off" required>
+
+    <button type="submit">Continue</button>
+
+  </form>
+
+  <div id="message"></div>
+
+</div>
+
+<script>
+document.getElementById("passwordForm")
+.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  document.getElementById("message").textContent =
+    "Demo complete! No password was saved or sent.";
+
+  this.reset();
+});
+</script>
+
+</body>
+</html>
